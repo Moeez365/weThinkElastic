@@ -1,7 +1,7 @@
 import React, { Children } from "react";
 import NavBar from "./components/navBar/NavBar";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "./pages/home/home";
+import Home from "./pages/home/Home";
 
 const Layout = () =>{
     return(

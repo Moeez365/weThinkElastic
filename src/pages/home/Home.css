@@ -1,0 +1,116 @@
+.home {
+  background: var(--dark);
+}
+
+.home .home__hero .home__hero-container {
+  padding: 2rem 0;
+}
+
+.home .home__hero .home__hero-container .h1__content {
+  display: flex;
+  justify-content: center;
+}
+
+.home .home__hero .home__hero-container .h1__content h1 {
+  font-size: 40vw;
+  font-weight: bolder;
+  color: var(--yellow);
+  line-height: 80%;
+}
+
+.home .home__hero .home__hero-container .h1__content {
+  line-height: 100%;
+  overflow-y: hidden;
+  padding-bottom: 5px;
+}
+
+.home .home__hero .home__hero-container .bottom__hero-content {
+  margin: 4rem 0;
+}
+
+.home .home__hero .home__hero-container .bottom__hero-content .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--yellow);
+}
+
+.home .home__hero .home__hero-container .bottom__hero-content .content span {
+  font-size: xx-large;
+  text-transform: uppercase;
+}
+
+
+.home .home__video .home__video-container {
+  min-width: 1cm;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.home .home__video .home__video-container video {
+  width: 100%;
+  height: auto;
+  /* min-height: 300px; */
+}
+
+@media (max-width: 750px) {
+  .home .home__video .home__video-container video {
+    width: 100% !important;
+    height: auto;
+  }
+  .home .home__video .home__video-container {
+    margin: 0 1rem;
+  }
+}
+
+.home .home__text .home__text-container {
+  --font-size: clamp(1rem, 12vw, 4cm);
+  color: var(--beige);
+  margin: 0 6rem;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.home .home__text .home__text-container .text-flex {
+  display: flex;
+  align-items: baseline;
+}
+ 
+.home .home__text .home__text-container .text-flex .text-line-height{
+    line-height: 91%;
+}
+
+.home .home__text .home__text-container .text-flex:nth-child(odd){
+    line-height: 800%;
+}
+
+.home .home__text .home__text-container .text-flex:nth-child(2) {
+  gap: 1rem;
+}
+
+.home .home__text .home__text-container .text-flex:nth-child(3) {
+  gap: 3rem;
+  justify-content: end;
+}
+
+.home .home__text .home__text-container .top__text {
+  gap: 3rem;
+}
+
+.home .home__text .home__text-container .text-style {
+  font-size: var(--font-size);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* .home .home__text .home__text-container .top__text p{
+    font-size: var(--font-size);
+    text-transform: uppercase;
+} */
+
+.home .home__text .home__text-container .top__text i {
+  font-family: "Great Vibes", cursive;
+  font-size: var(--font-size);
+}
