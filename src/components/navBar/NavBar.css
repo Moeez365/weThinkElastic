@@ -64,6 +64,7 @@ nav .nav__content .nav__offcanvas-button div {
 
 .nav__mobile-offcanvas {
   position: fixed;
+  z-index: 999!important;
   width: 100%;
   min-height: 100vh;
   background: var(--dark);
