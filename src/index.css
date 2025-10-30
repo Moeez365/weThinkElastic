@@ -1,41 +1,50 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-  --yellow: #f3c77c;
-  --beige: #e7cfb1;
-  --dark: #151414;
-  --orange: #e5813e;
-  --white: #fff;
-  --blue: #9ac1cb;
-}
-
 @font-face {
   font-family: "myfont1";
   src: url("/helveticaneue-medium.woff2");
-  font-weight: normal;
   font-style: normal;
+  font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "myfont2";
   src: url("/helveticaneue.woff2");
-  font-weight: normal;
   font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+:root{
+   --yellow: #f3c77c;
+  --beige: #e7cfb1;
+  --dark: #151414;
+    --dark-low: #151414bb;
+  --orange: #e5813e;
+  --white: #fff;
+  --blue: #9ac1cb;
+  --font-normal: "myfont1", "Helvetica", "Arial", sans-serif;
+  --font-medium: "myfont2", "Helvetica", "Arial", sans-serif;
 }
 
 body,
 html {
   margin: 0;
   padding: 0;
-  font-family: "myfont1", sans-serif;
+  /* font-family: "myfont1", "Helvetica","Arial",sans-serif; */
 }
 
 .MyFont1 {
-  font-family: "myfont1", sans-serif;
+  font-family: "myfont1" "Helvetica", "Arial", sans-serif;
 }
 
 .MyFont2 {
-  font-family: "myfont2", sans-serif;
+  font-family: "myfont2", "Helvetica", "Arial", sans-serif;
 }
+
