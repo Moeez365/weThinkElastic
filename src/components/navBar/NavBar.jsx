@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./NavBar.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   let navComponent = ["Projects", "Expertise", "The team", "Contact"];
@@ -36,18 +37,19 @@ const NavBar = () => {
     navCondition ? tl.current.play() : tl.current.reverse();
   }, [navCondition]);
 
-
   return (
     <>
       <nav>
-        <img className="main__logo" src="/logo.png" alt="" />
+        <Link to={"/"}>
+          <img className="main__logo" src="/logo.png" alt="" />
+        </Link>
 
         {/*Here is the desktop Navbar*/}
         <div className="nav__content nav__desktop-content">
           <ul className="nav__list">
             {navComponent.map((item, index) => (
               <li className="nav__list-items MyFont2" key={index}>
-                {item}
+                <Link to={item.toLowerCase().split(" ").join("-")}>{item}</Link>
               </li>
             ))}
           </ul>

@@ -1,0 +1,38 @@
+.project__page{
+    background: var(--dark);
+    color: var(--beige);
+}
+
+.project__page-heading {
+    padding: 5vw 0;
+}
+
+@media (max-width:450px) {
+    .project__page-heading {
+    padding: 7rem 0;
+}
+}
+
+.project__page-heading .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11vw;
+    font-family: var(--font-medium);
+}
+
+.project__page-heading .container p{
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.project__page-heading .container div{
+    display: flex;
+    gap: 3vw;
+    align-items: baseline;
+}
+
+.project__page-heading .container div i{
+    font-family: var(--font-cursive);
+    font-size: calc(11vw + 1rem);
+}

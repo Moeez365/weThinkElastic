@@ -24,12 +24,16 @@ nav .nav__content .nav__list {
   gap: 6vw;
 }
 
+nav .nav__content .nav__list a{
+  text-decoration: none;
+    color: var(--beige);
+}
+
 nav .nav__content .nav__list .nav__list-items {
   text-decoration: none;
   list-style: none;
   font-size: larger;
   font-weight: 500;
-  color: var(--beige);
 }
 
 @media (max-width: 768px) {

@@ -3,6 +3,7 @@ import "./Home.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ProjectSection from "../../components/projectSecion/projectSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,28 +15,61 @@ const Home = () => {
 
   const Ref = useRef(null);
 
+  const ProjectSectionConent = [
+    {
+      type: "video",
+      src: "/imagesAndVideo/Video1.mp4",
+      p1: "Hec Paris IEC",
+      p2: "Branding, Digital, Strategy",
+    },
+    {
+      type: "image",
+      src: "/imagesAndVideo/Img3.webp",
+      p1: "White coffee",
+      p2: "BBranding, Strategy",
+    },
+    {
+      type: "video",
+      src: "/imagesAndVideo/Video2.mp4",
+      p1: "Beev",
+      p2: "Branding, Digital, Strategy",
+    },
+    {
+      type: "image",
+      src: "/imagesAndVideo/Img2.webp",
+      p1: "Peugeot",
+      p2: "Branding",
+    },
+    {
+      type: "image",
+      src: "/imagesAndVideo/Img1.webp",
+      p1: "Branding, Digital, Strategy",
+      p2: "Branding, Digital, Strategy",
+    },
+  ];
+
   const logosImgs = [
-    '/Logos/imgi_1.svg',
-    '/Logos/imgi_2.svg',
-    '/Logos/imgi_3.svg',
-    '/Logos/imgi_4.svg',
-    '/Logos/imgi_5.svg',
-    '/Logos/imgi_6.svg',
-    '/Logos/imgi_7.svg',
-    '/Logos/imgi_8.svg',
-    '/Logos/imgi_9.svg',
-    '/Logos/imgi_10.svg',
-    '/Logos/imgi_11.svg',
-    '/Logos/imgi_12.svg',
-    '/Logos/imgi_13.svg',
-    '/Logos/imgi_14.svg',
-    '/Logos/imgi_15.svg',
-    '/Logos/imgi_16.svg',
-    '/Logos/imgi_17.svg',
-    '/Logos/imgi_18.svg',
-    '/Logos/imgi_19.svg',
-    '/Logos/imgi_20.svg'
-  ]
+    "/Logos/imgi_1.svg",
+    "/Logos/imgi_2.svg",
+    "/Logos/imgi_3.svg",
+    "/Logos/imgi_4.svg",
+    "/Logos/imgi_5.svg",
+    "/Logos/imgi_6.svg",
+    "/Logos/imgi_7.svg",
+    "/Logos/imgi_8.svg",
+    "/Logos/imgi_9.svg",
+    "/Logos/imgi_10.svg",
+    "/Logos/imgi_11.svg",
+    "/Logos/imgi_12.svg",
+    "/Logos/imgi_13.svg",
+    "/Logos/imgi_14.svg",
+    "/Logos/imgi_15.svg",
+    "/Logos/imgi_16.svg",
+    "/Logos/imgi_17.svg",
+    "/Logos/imgi_18.svg",
+    "/Logos/imgi_19.svg",
+    "/Logos/imgi_20.svg",
+  ];
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -67,22 +101,6 @@ const Home = () => {
       },
     });
 
-    gsap.from(
-      ".home__grid-container .grid_box div video, .home__grid-container .grid_box div img",
-      {
-        y: 100,
-        // duration:5,
-        scrollTrigger: {
-          trigger: ".home__grid-container",
-          // markers:true,
-          scrub: 2,
-          start: "top 90%",
-          end: "top -400%",
-          ease: "power3.out",
-        },
-      }
-    );
-
     const textWidth = Ref.current.scrollWidth;
     const containerWidth = containerRef.current.offsetWidth;
     const distance = textWidth - containerWidth;
@@ -97,7 +115,7 @@ const Home = () => {
         end: "top -300%",
       },
     });
-  });
+  }, []);
 
   return (
     <section className="home">
@@ -146,60 +164,23 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="home__grid">
-        <div className="home__grid-container">
-          <div className="grid_box">
+      <ProjectSection>
+        {ProjectSectionConent.map((item, index) => (
+          <div className="grid_box" key={index}>
             <div>
-              {" "}
-              <video src="/imagesAndVideo/Video1.mp4"></video>
+              {item.type === "image" ? (
+                <img src={item.src} />
+              ) : (
+                <video src={item.src}></video>
+              )}
             </div>
             <span>
-              <p>Hec Paris IEC</p>
-              <p>Branding, Digital, Strategy</p>
+              <p>{item.p1}</p>
+              <p>{item.p2}</p>
             </span>
           </div>
-
-          <div className="grid_box">
-            <div>
-              <img src="/imagesAndVideo/Img3.webp" alt="" />
-            </div>
-            <span>
-              <p>Hec Paris IEC</p>
-              <p>Branding, Digital, Strategy</p>
-            </span>
-          </div>
-
-          <div className="grid_box">
-            <div>
-              <video src="/imagesAndVideo/Video2.mp4"></video>
-            </div>
-            <span>
-              <p>Hec Paris IEC</p>
-              <p>Branding, Digital, Strategy</p>
-            </span>
-          </div>
-
-          <div className="grid_box">
-            <div>
-              <img src="/imagesAndVideo/Img2.webp" alt="" />
-            </div>
-            <span>
-              <p>Hec Paris IEC</p>
-              <p>Branding, Digital, Strategy</p>
-            </span>
-          </div>
-
-          <div className="grid_box">
-            <div>
-              <img src="/imagesAndVideo/Img1.webp" alt="" />
-            </div>
-            <span>
-              <p>Hec Paris IEC</p>
-              <p>Branding, Digital, Strategy</p>
-            </span>
-          </div>
-        </div>
-      </div>
+        ))}
+      </ProjectSection>
       <div ref={containerRef} className="home__pin">
         <h1 className="MyFont2" ref={Ref}>
           Expertise
@@ -243,11 +224,9 @@ const Home = () => {
         </div>
       </div>
       <div id="logos">
-        {
-          logosImgs.map((item, index) =>(
-            <img key={index} src={item} />
-          ))
-        }
+        {logosImgs.map((item, index) => (
+          <img key={index} src={item} />
+        ))}
       </div>
     </section>
   );

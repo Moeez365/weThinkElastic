@@ -117,7 +117,7 @@
 } */
 
 .home__text-container .top__text i {
-  font-family: "Great Vibes", cursive;
+  font-family: var(--font-cursive);
   font-size: var(--font-size);
 }
 
@@ -224,6 +224,11 @@
   color: var(--white);
 }
 
+.home__grid-container .grid_box p{
+  font-family: var(--font-medium);
+  color: var(--white);
+}
+
 @media (max-width: 768px) {
   .home__grid {
     margin-top: 1rem;
@@ -234,10 +239,6 @@
   }
 }
 
-/* .home__grid-container .grid_box video{
-  width: 1cm;
-  height: 1cm;
-} */
 
 .home__pin {
   background: var(--blue);
@@ -247,12 +248,6 @@
   display: flex;
   align-items: center;
 }
-
-/* .home__pin{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
 
 .home__pin h1 {
   display: inline-block;
