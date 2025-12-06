@@ -18,14 +18,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
-:root{
-   --yellow: #f3c77c;
+:root {
+  --yellow: #f3c77c;
   --beige: #e7cfb1;
   --dark: #151414;
-    --dark-low: #151414bb;
+  --dark-low: #151414bb;
   --orange: #e5813e;
   --white: #fff;
   --blue: #9ac1cb;
@@ -48,4 +47,3 @@ html {
 .MyFont2 {
   font-family: "myfont2", "Helvetica", "Arial", sans-serif;
 }
-

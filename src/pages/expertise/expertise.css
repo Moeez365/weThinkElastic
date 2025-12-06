@@ -1,0 +1,128 @@
+.expertise__page {
+  background: var(--dark);
+  color: var(--beige);
+  transition: 1s ease;
+}
+
+.expertise__heading {
+  /* background: red; */
+  padding: 3rem 0;
+}
+
+.expertise__heading .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.expertise__heading .container span {
+  display: flex;
+  font-size: max(8vw, 3rem);
+  line-height: 100%;
+}
+
+.expertise__heading .container .heading__bottom {
+  font-family: var(--font-normal);
+  font-size: max(2vw, 1rem);
+  text-align: center;
+  line-height: 100%;
+  padding-top: 1rem;
+  text-transform: uppercase;
+}
+
+.expertise__heading .container span p {
+  text-transform: uppercase;
+  font-family: var(--font-normal);
+}
+
+.expertise__heading .container span:nth-child(odd) {
+  gap: 19px;
+}
+
+.expertise__heading .container span i {
+  font-family: var(--font-cursive);
+}
+
+.expertise__main-content .container {
+  display: grid;
+  grid-template-columns: repeat(2, 45vw);
+  grid-template-areas:
+    "heading text"
+    "button button";
+  justify-content: center;
+  row-gap: 4rem;
+}
+
+.expertise__main-content .container h4 {
+  font-size: 7vw;
+  font-family: var(--font-normal);
+}
+
+.expertise__main-content .container span {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.expertise__main-content .container span p {
+  font-size: max(2rem, 2vw);
+  font-family: var(--font-medium);
+}
+
+.expertise__main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10vw;
+  padding: 5rem 0;
+}
+
+.expertise__main-content .container .buttons {
+  display: flex;
+  font-size: 3.6vw;
+  flex-wrap: wrap;
+  grid-area: button;
+  gap: 1rem;
+}
+
+.expertise__main-content .container .buttons p {
+  border: 3px solid var(--beige);
+  padding: 10px 1rem;
+  border-radius: 5rem;
+  font-family: var(--font-medium);
+}
+
+@media (max-width: 1200px) {
+  .expertise__main-content{
+    margin: 0 1rem;
+  }
+  .expertise__main-content .container {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-areas:
+      "heading"
+      "text"
+      "button";
+  }
+
+  .expertise__main-content .container .buttons {
+    font-size: max(3vw, 1.4rem);
+  }
+  .expertise__main-content .container .buttons p {
+    border: 2px solid var(--beige);
+    padding: 8px 1rem;
+  }
+}
+
+.left__scroll-container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+    overflow: hidden;
+}
+
+.left__scroll-container h1{
+  font-size: 100vh;
+  font-family: var(--font-normal) !important;
+   margin: 0 5rem;
+}
